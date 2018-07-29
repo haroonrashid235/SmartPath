@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}{{data.name}} {% endblock %}
+
+{% block content %}
+<div class="container" style="width:95%;">
+
+  <nav class="navbar">
+    <div class="navbar-header">
+      
+    <span class="navbar-brand">{{config.APPNAME }}</span>
+    </div>
+    <form class="navbar-form navbar-left" role="search" name="goto" action="/goto" method="POST">
+      <div class="form-group">
+        <input type="text" name="index" class="form-control" placeholder="Go to index">
+      </div>
+      <button type="Go" class="btn btn-default">Go</button>
+    </form>
+    <ul class="nav navbar-nav">
+      <li><a href="/">home</a></li>
+      <li><a href="/{{pager.prev}}">&larr;</a></li>
+      <li><a href="/{{pager.next}}">&rarr;</a></li>
+    </ul>
+  </nav>
+
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='images/'+data.name+'.jpg') }}" id='image' class="img-responsive center-block" alt="">
+    </div>
+    <div class="col-md-6">
+      <h2>{{data.name}}</h2>
+      {% include 'table.html' %}
+        <h4>Image Url:</h4> <p><i>{{ url_for('static', filename='images/'+data.name+'.jpg') }}</i></p>
+        <h4 id="predict_message" class="alert alert-info">System takes a few seconds to make predictions. Please be patient.</h4>
+        <div class='row'>
+        <div class='col-md-2'>
+          <form role="prediction" name="predict" action="/predict" method="POST">
+          <button id='predict'  class="btn btn-success" value="{{ url_for('static', 
+          filename='images/'+data.name+'.jpg') }}" name='predict_btn'>Predict</button>
+          </form>
+        </div>
+        <div class='col-md-2'>
+          <form role="prediction" name="predict" action="/upload" method="POST">
+            <button id='upload'  class="btn btn-primary" name='upload_btn'>Add new Data</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock %}

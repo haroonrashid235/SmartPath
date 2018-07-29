@@ -1,0 +1,26 @@
+<annotation>
+	<folder>TrainingFolder</folder>
+	<filename>IMG4.jpg</filename>
+	<path>/home/asjid/Documents/MachineLearning/HeadAndNeck/TrainingFolder/IMG4.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2016</width>
+		<height>1512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>mitotic</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>54</xmin>
+			<ymin>184</ymin>
+			<xmax>187</xmax>
+			<ymax>324</ymax>
+		</bndbox>
+	</object>
+</annotation>

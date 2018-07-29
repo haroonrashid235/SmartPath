@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container" style="width:95%;">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Results</h1>
+    </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="center-block">Original Image</h2><br>
+      <img src="{{path_original}}" id='image' class="img-responsive center-block" alt="" img-responsive center-block>
+    </div>
+    <div class="col-md-6">
+      <h2 class="center-block">Mitotic Predictions</h2><br>
+      <img src="{{path_predict}}" id='predict_image' class="img-responsive center-block" alt="">
+    </div>
+  </div><br><br>
+</div>
+
+{% endblock %}
